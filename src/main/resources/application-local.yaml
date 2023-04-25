@@ -1,0 +1,7 @@
+server:
+  port: 9001
+  ssl:
+    key-alias: spring
+    key-store: classpath:springKeystore.jks
+    key-store-password: password
+    enabled: true

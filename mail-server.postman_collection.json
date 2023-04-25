@@ -1,0 +1,149 @@
+{
+	"info": {
+		"_postman_id": "02c787ac-24df-42ce-bcf6-2b520dc8d849",
+		"name": "mail-server",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25749191"
+	},
+	"item": [
+		{
+			"name": "Send Mail",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "to",
+							"value": "sample@mail.com",
+							"type": "text"
+						},
+						{
+							"key": "subject",
+							"value": "This is the Subject",
+							"type": "text"
+						},
+						{
+							"key": "body",
+							"value": "Mail send from spring boot app named mail-server.",
+							"type": "text"
+						},
+						{
+							"key": "attachment",
+							"type": "file",
+							"src": []
+						}
+					]
+				},
+				"url": {
+					"raw": "https://{{local-domain}}/v1/mail-server/send/mail",
+					"protocol": "https",
+					"host": [
+						"{{local-domain}}"
+					],
+					"path": [
+						"v1",
+						"mail-server",
+						"send",
+						"mail"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send Bulk Mail",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "toMails",
+							"value": "sample1@gmail.com,\nsample2@hotmail.com,\nSAMPLE@YAHOO.COM",
+							"type": "text"
+						},
+						{
+							"key": "subject",
+							"value": "This is Bulk Mail Subject",
+							"type": "text"
+						},
+						{
+							"key": "body",
+							"value": "This is the Bulk Mail Body.",
+							"type": "text"
+						},
+						{
+							"key": "attachment",
+							"type": "file",
+							"src": []
+						}
+					]
+				},
+				"url": {
+					"raw": "https://{{local-domain}}/v1/mail-server/send/bulk-mail",
+					"protocol": "https",
+					"host": [
+						"{{local-domain}}"
+					],
+					"path": [
+						"v1",
+						"mail-server",
+						"send",
+						"bulk-mail"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "swagger-ui",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{local-domain}}/swagger-ui/#/mail-controller",
+					"protocol": "https",
+					"host": [
+						"{{local-domain}}"
+					],
+					"path": [
+						"swagger-ui",
+						""
+					],
+					"hash": "/mail-controller"
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "local-domain",
+			"value": "localhost:9001",
+			"type": "string"
+		}
+	]
+}
